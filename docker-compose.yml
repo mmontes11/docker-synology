@@ -2,7 +2,7 @@ version: "3.8"
 services:
   node-exporter:
     privileged: true
-    image: prom/node-exporter
+    image: prom/node-exporter:v1.9.0
     container_name: node-exporter
     restart: unless-stopped
     ports:
@@ -18,7 +18,7 @@ services:
       - "^/(rootfs/)?(dev|etc|host|proc|run|sys|volume1)($$|/)"
 
   snmp-exporter:
-    image: prom/snmp-exporter
+    image: prom/snmp-exporter:v0.28.0
     container_name: snmp_exporter
     restart: unless-stopped
     volumes:
